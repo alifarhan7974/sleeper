@@ -5,6 +5,44 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
     "requests>=2.32.4",
     "typing>=3.10.0.0",
 ]
+[tool.pytest.ini_options]
+addopts = """
+--cov=your_package 
+--cov-report=term-missing 
+--cov-report=html 
+--tb=short 
+-v
+"""
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["api"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+precision = 2
+fail_under = 0
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+]
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+[tool.autopep8]
+max_line_length = 88
+aggressive = 2
+in_place = true
+recursive = true
+
+[tool.uv]
+package = true
