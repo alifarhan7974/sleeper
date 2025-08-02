@@ -5,9 +5,11 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "fastapi[standard]>=0.116.1",
     "pytest>=8.4.1",
     "pytest-cov>=6.2.1",
     "requests>=2.32.4",
+    "standard>=1.0.3",
     "typing>=3.10.0.0",
 ]
 [tool.pytest.ini_options]
@@ -44,5 +46,4 @@ aggressive = 2
 in_place = true
 recursive = true
 
-[tool.uv]
-package = true
+
