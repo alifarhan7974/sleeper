@@ -54,3 +54,10 @@ dev = [
 [tool.ruff]
 select = ["E", "W"]
 
+ignore = [ 
+    "W291", # trailing whitespace
+    "W293", # blank line containing whitespace
+]
+
+# not enforcing line length 
+line-length = 120 
