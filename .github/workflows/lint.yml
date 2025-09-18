@@ -18,5 +18,8 @@ jobs:
       - name: Install uv
         run: curl -LsSf https://astral.sh/uv/install.sh | sh
 
-      - name: Run Ruff
+      - name: Run Ruff for test.py
         run: uv run ruff check ./src/api/test.py
+
+      - name: Run Ruff for league.py
+        run: uv run ruff check ./src/api/league.py
