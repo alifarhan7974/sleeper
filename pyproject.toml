@@ -52,12 +52,12 @@ dev = [
 ]
 
 [tool.ruff]
-select = ["E", "W"]
+line-length = 120 
 
+[tool.ruff.lint]
+select = ["E", "W"]
 ignore = [ 
     "W291", # trailing whitespace
     "W293", # blank line containing whitespace
 ]
 
-# not enforcing line length 
-line-length = 120 
