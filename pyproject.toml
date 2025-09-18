@@ -46,4 +46,11 @@ aggressive = 2
 in_place = true
 recursive = true
 
+[dependency-groups]
+dev = [
+    "ruff>=0.13.0",
+]
+
+[tool.ruff]
+select = ["E", "W"]
 

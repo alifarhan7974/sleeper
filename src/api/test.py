@@ -8,8 +8,6 @@ def generate_user_map(league_id) -> dict:
 
 def main(): 
     Mhs_grad_id = 1226686814018879488
-    #draft_id = 1226686815126163456
-    #user_map = generate_user_map(Mhs_grad_id)
 
     Mhs = League(Mhs_grad_id)
     rosters = Mhs.get_league_rosters()
