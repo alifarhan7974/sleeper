@@ -9,6 +9,9 @@ jobs:
   ruff-lint:
     runs-on: ubuntu-latest
     steps:
+      - name: Testing steps
+        run: echo "Hello world"
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -16,4 +19,4 @@ jobs:
         run: curl -LsSf https://astral.sh/uv/install.sh | sh
 
       - name: Run Ruff
-        run: uv run ruff check .
+        run: uv run ruff check ./src/api/test.py
