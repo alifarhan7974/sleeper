@@ -44,3 +44,16 @@ class League:
 
         full_url = build_url(BASE_URL, VERSION, LEAGUE, self.league_id, TRADED_PICKS)
         return get(full_url)
+
+
+    def get_user_map(self, league_id) -> dict:
+        """Returns a dictionary mapping usernames to userids"""
+        Mhs = League(league_id)
+        # Json response is a list of dicts, each one is abt one user
+        users = Mhs.get_league_users()
+        return {u["display_name"] : u["user_id"] for u in users}
+    
+
+    
+
+    

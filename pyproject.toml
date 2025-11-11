@@ -12,6 +12,9 @@ dependencies = [
     "standard>=1.0.3",
     "typing>=3.10.0.0",
 ]
+[tool.setuptools]
+package-dir = { "" = "src" }
+
 [tool.pytest.ini_options]
 addopts = """
 --cov=your_package 
@@ -48,6 +51,7 @@ recursive = true
 
 [dependency-groups]
 dev = [
+    "pytest>=8.4.1",
     "ruff>=0.13.0",
 ]
 
