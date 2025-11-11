@@ -63,5 +63,6 @@ select = ["E", "W"]
 ignore = [ 
     "W291", # trailing whitespace
     "W293", # blank line containing whitespace
+    "W292", # trailing blank line
 ]
 
