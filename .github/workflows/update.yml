@@ -1,0 +1,30 @@
+name: Test with Pytest & Lint with UV/Ruff
+
+on: 
+  push:
+  pull_request:
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout your repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Install UV
+      - name: Install UV
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+
+      # Step 3: Sync UV environment (install dependencies)
+      - name: Sync UV environment
+        run: uv sync
+
+      # Step 4: Run Ruff linter inside UV
+      - name: Run Ruff
+        run: uv run ruff check ./src/api/test.py ./src/api/league.py
+
+      # Step 5: Run pytest inside UV
+      - name: Run Pytest
+        run: uv run pytest --cov=src --cov-report=term-missing
